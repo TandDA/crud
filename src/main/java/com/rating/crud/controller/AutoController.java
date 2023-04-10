@@ -19,6 +19,10 @@ public class AutoController {
     public List<Auto> getAll(){
         return autoRepository.findAll();
     }
+    @GetMapping("/get/{id}")
+    public Auto getAll(@PathVariable int id){
+        return autoRepository.findById(id).get();
+    }
     @PostMapping("create")
     public Auto create(@RequestBody AutoDto autoDto){
         Auto auto = new Auto();
