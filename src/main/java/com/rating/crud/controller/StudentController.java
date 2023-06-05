@@ -33,13 +33,7 @@ public class StudentController {
     }
     @PutMapping("/update")
     public Student update(@RequestBody Student studentRequest){
-        Student student = studentRepository.findById(studentRequest.getId()).get();
-        student.setCourse(studentRequest.getCourse());
-        student.setStudentGroup(studentRequest.getStudentGroup());
-        student.setName(studentRequest.getName());
-        student.setFaculty(studentRequest.getFaculty());
-
-        return student;
+        return studentRepository.save(studentRequest);
     }
     @DeleteMapping("delete/{id}")
     public void delete(@PathVariable int id){
