@@ -1,18 +1,28 @@
 # crud
 
-Работа API src/main/java/com/rating/crud/controller/AutoController.java 
+Работа API src/main/java/com/rating/crud/controller/StudentController.java 
 
-Навигация по страницам src/main/java/com/rating/crud/controller/PageController.java (не успел допилить)
+Интерфейс для работы с api http://localhost:8080/swagger-ui/index.html
 
-БД MySQL
 
-/get - получить все машины
+/get - получить всех студентов
 
-/create создать машину
+/create создать студента
 
-/update обновить машину
+/update обновить студента
 
 /delete/{id} удалить по id
 
-Обращается к БД taskREST.
-taskREST содержит одну таблицу Auto(id,brand,model,color,number(номер)). Миграции настроить не успел, поэтому БД необходимо создать самостоятельно
+БД MySQL
+Нужно создать схему taskrest, а в ней таблицу:
+
+CREATE TABLE `students` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `faculty` varchar(255) DEFAULT NULL,
+  `course` varchar(255) DEFAULT NULL,
+  `student_group` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+Миграции настроить не успел, поэтому БД необходимо создать самостоятельно
